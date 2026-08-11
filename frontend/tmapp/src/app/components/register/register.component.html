@@ -1,0 +1,12 @@
+<div class="auth-container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="username" placeholder="Username">
+    <input type="password" formControlName="password" placeholder="Password">
+    <input type="password" formControlName="confirmPassword" placeholder="Confirm Password">
+    <div class="error" *ngIf="registerForm.hasError('mismatch')">Passwords do not match</div>
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    <p class="error">{{ errorMessage }}</p>
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<div class="form-container">
+  <h2>{{ isEdit ? 'Edit Task' : 'Create Task' }}</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="title" placeholder="Task title">
+    <textarea formControlName="description" placeholder="Description" rows="4"></textarea>
+    <div class="form-buttons">
+      <button type="submit" [disabled]="taskForm.invalid">Save</button>
+      <button type="button" routerLink="/tasks">Cancel</button>
+    </div>
+  </form>
+</div>
